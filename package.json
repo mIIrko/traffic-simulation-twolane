@@ -1,0 +1,32 @@
+{
+  "name": "trafficsimulation-twolane-git",
+  "version": "1.0.0",
+  "description": "two lane traffic simulation with the naSch model",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mIIrko/traffic-simulation.git"
+  },
+  "keywords": [
+    "cellular-automata",
+    "nasch-model",
+    "traffic-sim"
+  ],
+  "author": "paul petereit, mirko bay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mIIrko/traffic-simulation/issues"
+  },
+  "homepage": "https://github.com/mIIrko/traffic-simulation#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0"
+  }
+}
