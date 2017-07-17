@@ -51,7 +51,7 @@ q:before, q:after {
 
 /* the dots in the background */
 body {
-    background-size: 40px 40px;
+    background-size: 90px 90px;
     background-image: radial-gradient(circle, #000000 1px, rgba(0, 0, 0, 0) 1px);
 }
 
@@ -61,8 +61,8 @@ header {
 }
 
 /* the heading at the page top*/
-header h1 {
-    color: #334152;
+header h1, header h2 {
+    color: #000f21;;
     font-family: 'Roboto Mono', monospace;
     font-size: 3em;
     text-align: center;
@@ -71,8 +71,14 @@ header h1 {
     background-color: white;
 }
 
+header h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-top: -1.7em;
+}
+
 button {
-    background-color: #334152;
+    background-color: #7faadd;
     color: white;
     padding: 0.5em 1em;
     border: none;
@@ -81,24 +87,35 @@ button {
     font-family: 'Roboto Mono', monospace;
     margin-left: 0.5em;
     margin-right: 0.5em;
+    transition: background-color 300ms ease;
+}
+
+button:hover {
+    color: black;
+    background-color: ghostwhite;
 }
 
 #controls {
-    background-color: #049d93;
+    background-color: #153d76;
     text-align: center;
 }
 
 /* the first row with the inputs for variables and constraints */
 #inputelements {
-    width: 75%;
     padding: 2em;
     margin-left: auto;
     margin-right: auto;
 }
 
-#inputelements label {
+#inputelements .inputfield {
+    margin: 10px;
+    display: contents;
+}
+
+#inputelements .inputfield label {
     color: white;
     font-family: 'Roboto Mono', monospace;
+    margin-left: 12px;
 }
 
 #inputelements a label {
@@ -121,7 +138,6 @@ button {
 }
 
 .row {
-    width: 75%;
     padding-top: 2em;
     padding-left: 2em;
     padding-right: 2em;

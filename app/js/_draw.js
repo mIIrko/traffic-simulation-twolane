@@ -1,4 +1,4 @@
-var Drawer = (function () {
+var Plotter = (function () {
 
     /**
      * must be updated to print the two lane traffic
@@ -10,6 +10,8 @@ var Drawer = (function () {
      */
     function plot(amountOfCells, cars) {
 
+        var leftLaneCars = 0;
+        var rightLaneCars = 0;
 
         // create new rows
         var rightLane = document.createElement("tr");
@@ -35,20 +37,19 @@ var Drawer = (function () {
 
             if (cars[j].onLeftLane) {
                 carCell = leftLane.cells[carPosition];
-
             } else {
                 // car is on the right lane
                 carCell = rightLane.cells[carPosition];
             }
+
             // paint the cell with the specific color
             carCell.style.backgroundColor = cars[j].color;
-            //carCell.innerHTML = cars[j].speed;
-            carCell.innerHTML = cars[j].id;
+            carCell.innerHTML = cars[j].speed;
         }
 
-        // todo: return both lanes
         table.appendChild(rightLane);
         table.appendChild(leftLane);
+
     }
 
     return {

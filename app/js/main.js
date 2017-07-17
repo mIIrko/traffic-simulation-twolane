@@ -1,4 +1,4 @@
-// represents our cars on
+// represents our cars
 var cars = [];
 
 // initialize the table in the fronted
@@ -7,14 +7,14 @@ var table = document.createElement("table");
 
 function startSimulation() {
 
-    var cells = parseInt(document.getElementById("cellsInput").value);
-    var density = document.getElementById("densityInput").value;
-    var dawdleProbability = document.getElementById("dawdleInput").value;
-    var maxSpeed = parseInt(document.getElementById("maxSpeedInput").value);
-    var generations = parseInt(document.getElementById("generationsInput").value);
-    var amountOfCars = Math.floor(cells * density);
-
-    var whichLaneProbability = 0.5;
+    // make the variables global
+    cells = parseInt(document.getElementById("cellsInput").value);
+    density = document.getElementById("densityInput").value;
+    dawdleProbability = document.getElementById("dawdleInput").value;
+    maxSpeed = parseInt(document.getElementById("maxSpeedInput").value);
+    generations = parseInt(document.getElementById("generationsInput").value);
+    amountOfCars = Math.floor(cells * density);
+    whichLaneProbability = 0.5;
 
     // set the calculated amount of cars
     document.getElementById("carsInput").value = amountOfCars;
@@ -34,7 +34,6 @@ function startSimulation() {
     }
 
     // todo: was macht diese funktion?
-
     var tables = document.getElementsByTagName("table");
     for (var i = tables.length - 1; i >= 0; i -= 1) {
         if (tables[i]) {
@@ -46,21 +45,19 @@ function startSimulation() {
     // append the above generated table
     document.getElementById("canvasWrapper").appendChild(table);
     // plot the initial position to the table
-    Drawer.plot(cells, cars);
+    Plotter.plot(cells, cars);
 
 
     for (var j = 0; j < generations; j++) {
-
+        console.log("--- GENERATION " + j + " ---");
+        cars = Generator.laneChange(cars, maxSpeed);
         cars = Generator.accelerate(cars, maxSpeed);
         cars = Generator.brake(cars, amountOfCars, cells);
         cars = Generator.dawdle(cars, dawdleProbability);
         cars = Generator.move(cars, cells);
-
-        Drawer.plot(cells, cars);
+        console.log("--- AFTER --- ");
+        Plotter.plot(cells, cars);
 
     }
 }
-
-
-//console.log("event listener is setted up");
 

@@ -1,7 +1,3 @@
-/**
- * Created by mirko on 30.05.17.
- */
-
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
